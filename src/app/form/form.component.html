@@ -1,0 +1,29 @@
+<h3>Form Contact</h3>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+  <div>
+    <p>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" formControlName="email">
+    <p style="color: red"
+       *ngIf="registerForm.controls.email.hasError('required') && registerForm.controls.email.touched">
+      Email ko dc de trong
+    </p>
+    <p style="color: red" *ngIf="registerForm.controls.email.hasError('pattern')">Email phai dung dinh dang
+    </p>
+  </div>
+  <div>
+    <p>
+      <label for="password">Password </label>
+      <input type="text" id="password" name="password" formControlName="password">
+    </p>
+    <p style="color: red"
+       *ngIf="registerForm.controls.password.hasError('required') && registerForm.controls.password.touched">
+      Password ko dc de trong
+    </p>
+    <p style="color: red" *ngIf="registerForm.controls.password.hasError('minlength')">Password phai it nhat 6 ky tu
+    </p>
+  </div>
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>
