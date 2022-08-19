@@ -8,7 +8,7 @@
        *ngIf="registerForm.controls.email.hasError('required') && registerForm.controls.email.touched">
       Email ko dc de trong
     </p>
-    <p style="color: red" *ngIf="registerForm.controls.email.hasError('pattern')">Email phai dung dinh dang
+    <p style="color: red" *ngIf="registerForm.controls.email.hasError('email')">Email phai dung dinh dang
     </p>
   </div>
   <div>

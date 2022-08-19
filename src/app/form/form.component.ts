@@ -11,7 +11,7 @@ export class FormComponent implements OnInit {
   constructor() { }
 
   registerForm = new FormGroup({
-    email: new FormControl('', [Validators.pattern('^\\w+([.-]?\\w+)*@[a-z]+\\.(\\w+){2,}(\\.\\w{2,3})?'),Validators.required]),
+    email: new FormControl('', [Validators.email,Validators.required]),
     password: new FormControl('', [Validators.required,Validators.minLength(6)]),
   });
 
